@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Products(models.Model):
+    owner=models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     HOLAT_CHOICES=[('sotiladi','Sotiladi'),
                    ('ijaraga','Ijaraga')]
     holat=models.CharField(max_length=50,choices=HOLAT_CHOICES,default='sotiladi')
