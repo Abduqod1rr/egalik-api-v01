@@ -5,9 +5,10 @@ from .models import Products
 
 
 class AddProduct(CreateAPIView):
-
     queryset = Products.objects.all()
     serializer_class=serializer.ProductSerializer
+
+    
 
 class Home(ListAPIView):
     queryset=Products.objects.all()
