@@ -10,12 +10,10 @@ from .forms import UserCustomForm
 
 
 class registerUser(CreateAPIView):
-    
     serializer_class=userSerializers
     queryset=User.objects.all()
 
 class loginUser(APIView):
-    
     def post(self,request):
         username=request.data.get("username")
         password=request.data.get("password")
