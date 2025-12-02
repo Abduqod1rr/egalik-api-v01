@@ -3,6 +3,7 @@ from rest_framework.generics import CreateAPIView ,RetrieveUpdateDestroyAPIView 
 from . import serializer
 from .models import Products
 from rest_framework.permissions import IsAuthenticated
+from .permissions import IsOwnerOrReadOnly
 
 
 class AddProduct(CreateAPIView):
@@ -27,7 +28,7 @@ class MyProducts(ListAPIView):
         return Products.objects.filter(owner=self.request.user)
     
 
-
-    
-    
-
+class productCrud(RetrieveUpdateDestroyAPIView):
+    queryset = Products.objects.all()
+    serializer_class = serializer.ProductSerializer
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
