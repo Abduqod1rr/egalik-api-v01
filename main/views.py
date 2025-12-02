@@ -18,6 +18,14 @@ class AddProduct(CreateAPIView):
 class Home(ListAPIView):
     queryset=Products.objects.all()
     serializer_class=serializer.ProductSerializer
+
+class MyProducts(ListAPIView):
+    serializer_class=serializer.ProductSerializer
+    permission_classes=[IsAuthenticated]
+
+    def get_queryset(self):
+        return Products.objects.filter(owner=self.request.user)
+    
     
 
     
