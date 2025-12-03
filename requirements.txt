@@ -9,3 +9,4 @@ whitenoise>=6.5
 django-cors-headers>=4.0
 dj-database-url
 psycopg2-binary
+django-filter
