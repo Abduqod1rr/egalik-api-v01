@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-c6ke7yvtz$pd$0zky2q(_nxcvzmxtgk%$9ehzahh6v#8bk5khj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['egalik-api-v01.onrender.com']
 
 
 # Application definition
