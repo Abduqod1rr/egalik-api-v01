@@ -11,7 +11,9 @@ class Products(models.Model):
     KATEGORIYA_CHOICES=[('texnika','Texnika'),
                         ('transport','Transport'),
                         ('uskunalar','Uskunalar'),
-                        ('kochmas-mulk','Kochmas-mulk')]
+                        ('kochmas-mulk','Kochmas-mulk'),
+                        ('qolmehnati','Qolmehnati'),
+                        ('tarixiy-buyunlar','Tarixiy-buyumlar')]
     kategoriya=models.CharField(max_length=60,choices=KATEGORIYA_CHOICES,default='texnika')
     tavsilot=models.TextField(default='mahsulot:')
     narx=models.DecimalField(max_digits=10,decimal_places=2)

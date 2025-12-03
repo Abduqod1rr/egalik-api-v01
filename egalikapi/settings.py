@@ -141,6 +141,10 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
 # Agar qo‘shimcha static papka bo‘lsa
 #STATICFILES_DIRS = [BASE_DIR / "static",]
 # Default primary key field type
