@@ -12,12 +12,17 @@ class Products(models.Model):
                         ('transport','Transport'),
                         ('uskunalar','Uskunalar'),
                         ('kochmas-mulk','Kochmas-mulk')]
-    kategoriya=models.CharField(max_length=60,choices=KATEGORIYA_CHOICES,default='teexnika')
+    kategoriya=models.CharField(max_length=60,choices=KATEGORIYA_CHOICES,default='texnika')
     tavsilot=models.TextField(default='mahsulot:')
     narx=models.DecimalField(max_digits=10,decimal_places=2)
     rasm=models.FileField(upload_to='products/',null=True)
     number=models.CharField(max_length=13,default='+998000000000')
     telegram=models.CharField(max_length=60,default='@username')
+
+    class Meta:
+        ordering=['-id']
+
+
 
     def __str__(self):
         return self.title
