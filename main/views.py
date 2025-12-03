@@ -4,6 +4,8 @@ from . import serializer
 from .models import Products
 from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwnerOrReadOnly
+from rest_framework import filters
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class AddProduct(CreateAPIView):
@@ -19,6 +21,10 @@ class AddProduct(CreateAPIView):
 class Home(ListAPIView):
     queryset=Products.objects.all()
     serializer_class=serializer.ProductSerializer
+    filter_backends=[filters.SearchFilter,DjangoFilterBackend]
+    search_fields = ['title']
+    filterset_fields = ['kategoriya']
+    
 
 class MyProducts(ListAPIView):
     serializer_class=serializer.ProductSerializer
