@@ -63,14 +63,10 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-<<<<<<< HEAD
-CORS_ALLOW_ALL_ORIGINS = True 
-#CORS_ALLOWED_ORIGINS = [    "https://egalik-v1.onrender.com",]
-=======
+
 CORS_ALLOWED_ORIGINS = [
     "https://egalik-v1.onrender.com",
 ]
->>>>>>> dev
 
 
 ROOT_URLCONF = 'egalikapi.urls'
