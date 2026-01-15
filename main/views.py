@@ -19,11 +19,19 @@ class AddProduct(CreateAPIView):
     
 
 class Home(ListAPIView):
+<<<<<<< HEAD
     queryset = Products.objects.all()
     serializer_class = serializer.ProductSerializer
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields = ['title']
     filterset_fields = ['kategoriya']  # TO'G'RI
+=======
+    queryset=Products.objects.all()
+    serializer_class=serializer.ProductSerializer
+    filter_backends=[filters.SearchFilter,DjangoFilterBackend]
+    search_fields = ['title']
+    filterset_fields = ['kategoriya']
+>>>>>>> dev
     
 
 class MyProducts(ListAPIView):

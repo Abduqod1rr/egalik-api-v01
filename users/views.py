@@ -5,9 +5,21 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate ,login ,logout
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status , permissions
 from .forms import UserCustomForm
+from rest_framework_simplejwt.tokens import RefreshToken
 
+class LogoutView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        try:
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()  # blacklist the refresh token
+            return Response({"detail": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response({"error": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST)
 
 class registerUser(CreateAPIView):
     serializer_class=userSerializers
@@ -25,12 +37,3 @@ class loginUser(APIView):
         
         return Response({"message": f"Welcome {user.username} ✅"})
     
-
-class logoutUser(APIView):
-    def post(self,request):
-        logout(request)
-        return Response({"message": "Logged out successfully ✅"}, status=status.HTTP_200_OK)
-
-    def get(self,request):
-        logout(request)
-        return Response({"message": "Logged out successfully ✅"}, status=status.HTTP_200_OK)
