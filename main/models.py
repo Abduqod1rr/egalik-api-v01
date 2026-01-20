@@ -17,7 +17,7 @@ class Products(models.Model):
     kategoriya=models.CharField(max_length=60,choices=KATEGORIYA_CHOICES,default='texnika')
     tavsilot=models.TextField(default='mahsulot:')
     narx=models.DecimalField(max_digits=10,decimal_places=2)
-    rasm=models.FileField(upload_to='products/',null=True)
+    rasm=models.FileField(upload_to='products/',null=True,default='products/defal.jpg')
     number=models.CharField(max_length=13,default='+998000000000')
     telegram=models.CharField(max_length=60,default='@username')
 
