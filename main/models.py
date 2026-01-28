@@ -13,7 +13,7 @@ class Products(models.Model):
                         ('uskunalar','Uskunalar'),
                         ('kochmas-mulk','Kochmas-mulk'),
                         ('qolmehnati','Qolmehnati'),
-                        ('tarixiy-buyunlar','Tarixiy-buyumlar'),
+                        ('tarixiy-buyumlar','Tarixiy-buyumlar'),
                         ('kitob','Kitob'),
                         ('qishloq-hojaligi','Qishloq-hojaligi')]
     kategoriya=models.CharField(max_length=60,choices=KATEGORIYA_CHOICES,default='texnika')
