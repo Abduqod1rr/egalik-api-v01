@@ -66,6 +66,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     "https://egalik-v1.onrender.com",
+    "https://egalik.uz/"
 ]
 
 
