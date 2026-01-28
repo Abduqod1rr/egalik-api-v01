@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    
     "corsheaders.middleware.CorsMiddleware",  # ENG TEPADA
     "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',

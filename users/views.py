@@ -21,9 +21,11 @@ class LogoutView(APIView):
         except Exception as e:
             return Response({"error": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST)
 
+
 class registerUser(CreateAPIView):
     serializer_class=userSerializers
     queryset=User.objects.all()
+
 
 class loginUser(APIView):
     def post(self,request):
