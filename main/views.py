@@ -41,3 +41,8 @@ class productCrud(RetrieveUpdateDestroyAPIView):
     queryset = Products.objects.all()
     serializer_class = serializer.ProductSerializer
     permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
+
+from django.http import JsonResponse
+
+def healthz(request):
+    return JsonResponse({"status": "ok"})
